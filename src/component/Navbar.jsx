@@ -1,7 +1,32 @@
-import React ,{useRef} from 'react'
+import React ,{useRef,useState,useEffect} from 'react'
 import Logo from '../assets/images/logo.png'
 import {cart} from '../Data'
-const Navbar = () => {
+const Navbar = ({cart,onUpdate}) => {
+
+   
+    useEffect(()=>{
+        // window.addEventListener('beforeunload', ()=>{localStorage.clear();});
+        
+        const savedCart=JSON.parse(localStorage.getItem('cart'))||[];
+        onUpdate(savedCart);
+    },[]);
+
+    
+
+    const removeFromCart=(index)=>{
+        const updatedCart=[...cart];
+        if(updatedCart[index].quantity===1){
+        updatedCart.splice(index,1);
+       }else{
+        updatedCart[index].quantity-=1;
+       }
+
+        onUpdate(updatedCart);
+        localStorage.setItem('cart',JSON.stringify(updatedCart));
+      };
+
+
+    
     const cartRef=useRef();
     const navbarRef=useRef();
     const searchRef=useRef();
@@ -47,18 +72,36 @@ const Navbar = () => {
             
 
             <div className='cart-items-container' ref={cartRef}>
-            {
-                cart.map((item,index)=>(
-                <div className='cart-item'key={index}>
-                    <img src={item.img} alt="" />
-                    <div className="content">
-                        <h3>Cart Item 0{1+index}</h3>
-                        <div className='price'> Rs {15.99*index+12.36} </div>
-                    </div>
-                    <span className='fas fa-times'></span>
-                </div>   
-                ))
-            }
+            
+                <h1 style={{color:"gold",fontSize:"35px",padding:"2rem",textAlign:"center"}}>Your Order</h1>
+                {
+                    cart.length===0?(
+                        <h3 style={{color:"grey",fontSize:"35px",padding:"2rem",textAlign:"center"}}>Your Cart is Empty</h3>
+                    ):(
+                        <ul>
+                            {
+                            cart.map((item,index)=>(
+                                <div className='cart-item'key={index}>
+                                    <img src={item.image} alt="" />
+                                    <div className="content">
+                                        <h3>{item.name}</h3>
+                                        <div className='price'> Rs {item.price*item.quantity} </div>
+                                    </div>
+                                    <div style={{ position: 'absolute', top: "4rem", right: 2 }}>
+                                        <h2>Quantity  : {item.quantity}</h2>
+                                    </div>
+                                    <span onClick={()=>removeFromCart(index)} className='fas fa-times'></span>
+                                </div>   
+                                ))
+                            }
+                        </ul>
+                    )
+                
+                }
+
+
+                
+            
             <a href="#" className='btn'>CheckOut Now </a>
             </div>
 

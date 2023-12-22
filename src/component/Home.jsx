@@ -13,7 +13,7 @@ const Home = () => {
                   <span> continental</span> and Asian 
                   flavours under a roof of single Dinning
                 </p>
-                <a href="#" className='btn'>
+                <a href="#menu" className='btn'>
                   Order Your Now
                 </a>
             </div>

@@ -152,6 +152,7 @@ section {
 
 .header .cart-items-container {
   position: absolute;
+  overflow-y: auto;
   top: 100%;
   right: -100%;
   height: calc(100vh - 9.5rem);
@@ -187,6 +188,7 @@ section {
 
 .header .cart-items-container .cart-item img {
   height: 7rem;
+  border-radius: 2rem;
 }
 
 .header .cart-items-container .cart-item .content h3 {
@@ -283,8 +285,9 @@ section {
 }
 
 .menu .box-container .box img {
-  height: 10rem;
-  border-radius: 50%;
+  height: 15rem;
+  width: 20rem;
+  border-radius: 2rem;
 }
 
 .menu .box-container .box h3 {
@@ -611,3 +614,4 @@ section {
     font-size: 50%;
   }
 }
+

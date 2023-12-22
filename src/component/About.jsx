@@ -17,7 +17,7 @@ const About = () => {
                 <p>
                 Our culinary team, led by our award-winning chef, is dedicated to crafting dishes that showcase fresh, seasonal ingredients and innovative culinary techniques. We source our ingredients from local farmers and purveyors whenever possible, ensuring that our food is not only delicious but also sustainable.
                 </p>
-                <a href="#"className='btn'>Learn More</a>
+                <a href="#blogs"className='btn'>Learn More</a>
             </div>
         </div>
       </section>

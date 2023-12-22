@@ -1,4 +1,4 @@
- import menuImage1 from "./assets/images/menu-1.png";
+import  menuImage1 from "./assets/images/menu-1.png";
 import menuImage2 from "./assets/images/menu-2.png";
 import menuImage3 from "./assets/images/menu-3.png";
 import menuImage4 from "./assets/images/menu-4.png";
@@ -17,6 +17,12 @@ import reviewImage3 from "./assets/images/pic-1.png";
 import blogImage1 from "./assets/images/blog-1.jpeg";
 import blogImage2 from "./assets/images/blog-2.jpeg";
 import blogImage3 from "./assets/images/blog-3.jpeg";
+
+
+
+
+
+
 const menu = [
   {
     img: menuImage1,
@@ -53,15 +59,19 @@ const menu = [
 const cart = [
   {
     img: cartImage1,
+    price:"32.12",
   },
   {
     img: cartImage2,
+    price:"16.54",
   },
   {
     img: cartImage3,
+    price:"24.62",
   },
   {
     img: cartImage4,
+    price:"31.66",
   },
 ];
 
@@ -103,17 +113,20 @@ const blog = [
   {
     img: blogImage1,
     title:"Heart of Fries",
-    feed: "French fries can provide healthy fats like monounsaturated and polyunsaturated fats. The fiber in potatoes can also help with digestion."
+    feed: "French fries can provide healthy fats like monounsaturated and polyunsaturated fats. The fiber in potatoes can also help with digestion.",
+    link:"https://frenchfriesmachine.com/blog"
   },
   {
     img: blogImage2,
     title:"Italian Sandwich",
-    feed:"The balance between different components, such as meats, cheeses, veggies, and condiments, is crucial. The bread should be fresh and of the right texture."
+    feed:"The balance between different components, such as meats, cheeses, veggies, and condiments, is crucial. The bread should be fresh and of the right texture.",
+    link:"https://www.sipandfeast.com/italian-sub-hoagie-hero/"
   },
   {
     img: blogImage3,
     title:"Detox Drinks",
-    feed:"Over the years, detoxification has caught on as a simple method of keeping our mind, body and soul relaxed. "
+    feed:"Over the years, detoxification has caught on as a simple method of keeping our mind, body and soul relaxed. ",
+    link:"https://www.healthifyme.com/blog/detox-waters-for-weight-loss/"
   },
 ];
-export { menu, cart, product, review, blog };
+export {menu, cart, product, review, blog };

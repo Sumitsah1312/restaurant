@@ -14,10 +14,10 @@ const Blog = () => {
                             <img src={item.img} alt="" />
                         </div>
                         <div className="content">
-                            <a href="#" className='title'>{item.title}</a>
+                            <a href={item.link} target='_blank' className='title'>{item.title}</a>
                             <span>by admin / 21st june, 2023</span>
                             <p>{item.feed}</p>
-                            <a href="#" className='btn'>Read More</a>
+                            <a href={item.link} target='_blank' className='btn'>Read More</a>
                         </div>
                     </div>
                 ))
