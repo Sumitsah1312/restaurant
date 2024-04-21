@@ -10,6 +10,7 @@ import Review from './component/Review';
 import Contact from './component/Contact';
 import Blog from './component/Blog';
 import Footer from './component/Footer';
+import Reservation from './component/Reservation';
 function App() {
   const [cart,setCart]=useState([]);
   const updateCart = (newValue) => {
@@ -22,6 +23,7 @@ function App() {
       <About/>
       <Menu cart={cart} onUpdate={updateCart}/>
       <Product/>
+      <Reservation/>
       <Review/>
       <Contact/>
       <Blog/>

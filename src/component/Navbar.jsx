@@ -1,9 +1,8 @@
 import React ,{useRef,useState,useEffect} from 'react'
 import Logo from '../assets/images/logo.png'
-import {cart} from '../Data'
+
 const Navbar = ({cart,onUpdate}) => {
 
-   
     useEffect(()=>{
         // window.addEventListener('beforeunload', ()=>{localStorage.clear();});
         
@@ -25,7 +24,15 @@ const Navbar = ({cart,onUpdate}) => {
         localStorage.setItem('cart',JSON.stringify(updatedCart));
       };
 
-
+      const msg=()=>{
+        const cartData=JSON.parse(localStorage.getItem('cart'))||[];
+        const totalPrice=cartData.reduce((sum,item)=>sum+(item.price*item.quantity),0);
+        const alertMessage=cartData.map(item=>(`${item.name}    Qty,:${item.quantity}    Price: ${item.price.toFixed(2)}\n`
+    )).join('\n');
+       
+    alert(`ORDER DETAILS\n${alertMessage}\nTotal Price: Rs. ${totalPrice.toFixed(2)}
+        `)
+      };
     
     const cartRef=useRef();
     const navbarRef=useRef();
@@ -102,7 +109,7 @@ const Navbar = ({cart,onUpdate}) => {
 
                 
             
-            <a href="#" className='btn'>CheckOut Now </a>
+            <a href='#' onClick={msg} className='btn'>CheckOut Now </a>
             </div>
 
         </header>

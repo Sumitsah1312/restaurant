@@ -188,6 +188,7 @@ section {
 
 .header .cart-items-container .cart-item img {
   height: 7rem;
+  width: 8rem;
   border-radius: 2rem;
 }
 
